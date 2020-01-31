@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<meta name="viewport" content="width=device-width" />
+<link   rel="stylesheet"  href="cal_styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="vue.js"></script>
+</head>
+<body>
+<div style="border:2px solid grey;" id="container">
+<header>
+<i class="fa fa-bars" aria-hidden="true"></i>
+<h2 style="background-color: lightgreen;color:white; text-align:center; margin-bottom: 0px !important; padding:10px;
+border-bottom:2px solid black;">Calculator</h5>
+</header>
+<main>
+<div id="buttons">
+<label for="textbar" ></label>
+<input type="text" id="textbar"  v-bind:value="values">
+<br>
+<input type="button" class="values" id="cancel" value="AC"   v-on:click="values=' '">
+<input type="button" class="values" value="%"  v-on:click="values+='%'">
+<input type="button" class="values"  value="x2"   v-on:click="values=Math.pow(values,2)">
+<input type="button" class="values"  value="&#8730;"   v-on:click="values=Math.sqrt(values)">
+<!-- you can also write this in your v-on:click attribute evalu(Math.sqrt(values)) -->
+<br>
+<input type="button" class="values" value="7" v-on:click="values+=7">
+<input type="button" class="values" value="8" v-on:click="values+=8">
+<input type="button" class="values" value="9" v-on:click="values+=9">
+<input type="button"  class="operator" value="+" v-on:click="values+='+'">
+<br>
+<input type="button" class="values" value="4" v-on:click="values+=4">
+<input type="button" class="values" value="5" v-on:click="values+=5">
+<input type="button" class="values" value="6" v-on:click="values+=6">
+<input type="button"  class="operator" value="-" v-on:click="values+='-'">
+<br>
+<input type="button" class="values" value="1"  v-on:click="values+=1">
+<input type="button" class="values" value="2"  v-on:click="values+=2">
+<input type="button" class="values" value="3"  v-on:click="values+=3">
+<input type="button"  class="operator" value="*" v-on:click="values+='*'">
+<br>
+<input type="button" class="values" value="0"  v-on:click="values+=0">
+<input type="button"  class="values" value="." v-on:click="values+='*'">
+<input type="button" id="clicked" class="operator" style="background-color: lightgreen" value="=" v-on:click="evalu(values)">
+<input type="button"  class="operator" value="/" v-on:click="values+='/'">
+<br>
+</main>
+</div>
+
+<!-- <div id="sidebar">
+                <p onclick="empty()">AC</p>
+          </div>
+</div> -->
+</body>
+<script src="cal_script.js"></script>
+</html>
