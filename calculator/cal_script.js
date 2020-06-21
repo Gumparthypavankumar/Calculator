@@ -12,7 +12,7 @@
 // a.value=" ";
 // a.style.fontWeight="bold";
 // }
-new Vue({
+this.vue=new Vue({
 el:"#container",
 data:
 {
@@ -24,3 +24,9 @@ this.values=`${eval(string)}`;
 }
 }
 });
+document.getElementsByTagName('body')[0].addEventListener('keypress',function(event){
+		if(event.code == 'Enter'){
+			var x=document.getElementById('textbar').value;
+			vue.evalu(x);
+		}
+	});
