@@ -17,7 +17,7 @@ border-bottom:2px solid black;">Calculator</h5>
 <main>
 <div id="buttons">
 <label for="textbar" ></label>
-<input type="text" id="textbar"  v-bind:value="values">
+<input type="text" id="textbar"  v-model="values" autofocus>
 <br>
 <input type="button" class="values" id="cancel" value="AC"   v-on:click="values=' '">
 <input type="button" class="values" value="%"  v-on:click="values+='%'">
